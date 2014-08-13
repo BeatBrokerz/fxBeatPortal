@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en" class="app">
+<head>
+    <meta charset="utf-8"/>
+    <title data-bind="html: app.settings.app_name + ' - Music Portal'">Music Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" href="css/jplayer.flat.css" type="text/css"/>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="css/animate.css" type="text/css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/simple-line-icons.css" type="text/css"/>
+    <link rel="stylesheet" href="css/font.css" type="text/css"/>
+    <link rel="stylesheet" href="css/pageloader.css" type="text/css"/>
+    <!--[if lt IE 9]>
+    <script src="js/ie/html5shiv.js"></script>
+    <script src="js/ie/respond.min.js"></script>
+    <script src="js/ie/excanvas.js"></script>
+    <![endif]-->
+
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.beatbrokerz.com/flex/js/flexLoader.js"></script>
+
+</head>
+<body>
+<link rel="stylesheet" href="css/app.css" type="text/css"/>
+<script type="text/javascript" src="js/pageloader.js"></script>
+
+<!-- BEGIN LOADING SCREEN -->
+<div id="bonfire-pageloader">
+
+    <div class="bonfire-pageloader-icon" style="width:200px; color:#fff;">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		 width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+	<path id="loading-12-icon" d="M291,82.219c0,16.568-13.432,30-30,30s-30-13.432-30-30s13.432-30,30-30S291,65.65,291,82.219z
+		 M261,404.781c-15.188,0-27.5,12.312-27.5,27.5s12.312,27.5,27.5,27.5s27.5-12.312,27.5-27.5S276.188,404.781,261,404.781z
+		 M361.504,113.167c-4.142,7.173-13.314,9.631-20.487,5.489c-7.173-4.141-9.631-13.313-5.49-20.487
+		c4.142-7.173,13.314-9.631,20.488-5.489C363.188,96.821,365.645,105.994,361.504,113.167z M188.484,382.851
+		c-14.348-8.284-32.697-3.368-40.98,10.98c-8.285,14.349-3.367,32.696,10.98,40.981c14.35,8.283,32.697,3.367,40.98-10.981
+		C207.75,409.482,202.834,391.135,188.484,382.851z M421.33,184.888c-8.368,4.831-19.07,1.965-23.901-6.404
+		c-4.832-8.368-1.965-19.07,6.404-23.902c8.368-4.831,19.069-1.964,23.9,6.405C432.566,169.354,429.699,180.056,421.33,184.888z
+		 M135.399,329.767c-8.285-14.35-26.633-19.266-40.982-10.982c-14.348,8.285-19.264,26.633-10.979,40.982
+		c8.284,14.348,26.632,19.264,40.981,10.98C138.767,362.462,143.683,344.114,135.399,329.767z M436.031,277.249
+		c-11.044,0-20-8.953-20-19.999c0-11.045,8.955-20.001,20.001-20.001c11.044,0,19.999,8.955,19.999,20.002
+		C456.031,268.295,447.078,277.249,436.031,277.249z M115.97,257.251c-0.001-16.57-13.433-30.001-30.001-30.002
+		c-16.568,0.001-29.999,13.432-30,30.002c0.001,16.566,13.433,29.998,30.001,30C102.538,287.249,115.969,273.817,115.97,257.251z
+		 M401.333,364.248c-10.759-6.212-14.446-19.97-8.234-30.73c6.212-10.759,19.971-14.446,30.731-8.233
+		c10.759,6.211,14.445,19.971,8.232,30.73C425.852,366.774,412.094,370.46,401.333,364.248z M135.398,184.736
+		c8.285-14.352,3.368-32.698-10.98-40.983c-14.349-8.283-32.695-3.367-40.981,10.982c-8.282,14.348-3.366,32.696,10.981,40.981
+		C108.768,204,127.115,199.082,135.398,184.736z M326.869,421.328c-6.902-11.953-2.807-27.242,9.148-34.145
+		s27.243-2.806,34.146,9.149c6.902,11.954,2.806,27.243-9.15,34.145C349.059,437.381,333.771,433.284,326.869,421.328z
+		 M188.482,131.649c14.352-8.286,19.266-26.633,10.982-40.982c-8.285-14.348-26.631-19.264-40.982-10.98
+		c-14.346,8.285-19.264,26.633-10.98,40.982C155.787,135.017,174.137,139.932,188.482,131.649z"/>
+	</svg>
+        <br>Loading Interface
+    </div>
+
+    <script>
+        jQuery(window).resize(function () {
+            resizenow();
+        });
+        function resizenow() {
+            var browserwidth = jQuery(window).width();
+            var browserheight = jQuery(window).height();
+            jQuery('.bonfire-pageloader-icon').css('right', ((browserwidth - jQuery(".bonfire-pageloader-icon").width()) / 2)).css('top', ((browserheight - jQuery(".bonfire-pageloader-icon").height()) / 2));
+        }
+        ;
+        resizenow();
+    </script>
+
+</div>
+<!-- END LOADING SCREEN -->
+
+<section class="vbox">
+    <header class="bg-white-only header header-md navbar navbar-fixed-top-xs">
+        <div class="navbar-header aside bg-info nav-xs">
+            <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
+                <i class="icon-list"></i>
+            </a>
+            <a href="javascript:;" class="navbar-brand text-lt">
+                <i class="icon-earphones"></i>
+                <span class="hidden-nav-xs m-l-sm">Music Portal</span>
+            </a>
+            <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user">
+                <i class="fa fa-comments"></i>
+            </a>
+        </div>
+        <ul class="nav navbar-nav hidden-xs">
+            <li>
+                <a href="javascript:;" data-target="#nav,.navbar-header" data-toggle="class:nav-xs,nav-xs"
+                   class="text-muted">
+                    <i class="fa fa-indent text"></i>
+                    <i class="fa fa-dedent text-active"></i>
+                </a>
+            </li>
+        </ul>
+        <div class="navbar-form navbar-left m-t m-l-n-xs hidden-xs" style="margin:13px">
+            <h2 style="margin:0" class="font-thin"><span data-bind="html: app.settings.app_name"></span></h2>
+        </div>
+        <div class="navbar-right ">
+            <ul class="nav navbar-nav m-n hidden-xs nav-user user">
+                <li class="hidden-xs">
+                    <a href="javascript:;" class="dropdown-toggle lt" style="padding:19px; padding:19.5px;" data-toggle="dropdown">
+                        <i class="icon-basket i-lg"></i>
+                        <!-- ko if: cart().items.length -->
+                        <span class="badge badge-sm up bg-success count" data-bind="text: cart().items.length"></span>
+                        <!-- /ko -->
+                        <span class="text-md" style="padding-left:5px" data-bind="text: '$' + cart().total"></span>
+                    </a>
+                    <section class="dropdown-menu aside-xl animated fadeInUp">
+                        <section class="panel bg-white">
+                            <div class="panel-heading b-light bg-light">
+                                <strong>You have <span class="count" data-bind="text: cart().items.length">0</span> items in
+                                    your cart</strong>
+                            </div>
+                            <div class="list-group list-group-alt" data-bind="foreach: cart().items">
+                                <a href="#" class="media list-group-item" data-bind="click: $root.music.showLicense">
+                        <span class="pull-left thumb-sm">
+                  <!-- ko with: $root.music.playlists.cart.media[playlistIndex] -->
+                          <img data-bind="attr: { src: thumbnail }" alt="..." class="img-circle">
+                  <!-- /ko -->
+                        </span>
+                        <span class="media-body block m-b-none">
+                          <span data-bind="html: title"></span><br>
+                          <small class="text-muted" data-bind="text: license.name + ' - $' + price"></small>
+                        </span>
+                                </a>
+                            </div>
+                            <div class="panel-footer text-sm">
+                                <!-- ko if: cart().items.length -->
+                                <span class="pull-right"><a class="btn btn-success btn-xs m-l-sm m-b-sm"
+                                                            data-bind="click: cart.checkout"><i class="fa fa-dollar"></i>
+                                    &nbsp;Checkout</a></span>
+                                <!-- /ko -->
+                                <a href="javascript:;" data-bind="click: cart.show"><i class="fa fa-shopping-cart"></i>
+                                    &nbsp;Shopping cart details</a>
+                            </div>
+                        </section>
+                    </section>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle bg clear" data-toggle="dropdown">
+                        <i class="fa fa-comments i-lg"></i> &nbsp;&nbsp;
+                        <span>Connect With Us</span> <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight">
+                        <li>
+                            <span class="arrow top"></span>
+                        </li>
+                        <!-- ko with: producers.byId()[app.settings.acct_id] -->
+                        <!-- ko foreach: sociallinks -->
+                        <li>
+                            <a data-bind="attr: { href: url, title: title }"><i
+                                    data-bind="attr: { class: 'fw' + icon }"></i> &nbsp;On <span
+                                    data-bind="text: title"></span></a>
+                        </li>
+                        <!-- /ko -->
+                        <!-- /ko -->
+                        <li class="divider"></li>
+                        <li>
+                            <a id="email-modal" href="#modal-form" data-toggle="modal"><i class="fa fa-envelope-o"></i>
+                                &nbsp;Send Email</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <section>
+        <section class="hbox stretch">
+            <!-- .aside -->
+            <aside class="bg-black dk nav-xs aside hidden-print" id="nav">
+                <section class="vbox">
+                    <section class="w-f-md scrollable">
+                        <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px"
+                             data-railOpacity="0.2">
+
+                            <!-- nav -->
+                            <nav class="nav-primary hidden-xs">
+                                <ul class="nav bg clearfix">
+                                    <li class="hidden-nav-xs padder m-t m-b-sm text-xs text-muted">
+                                        Discover
+                                    </li>
+                                    <!-- ko if: app.settings.app_type == 'producer' -->
+                                    <li>
+                                        <a href="#producer-bio" class="close-nav">
+                                            <i class="icon-user icon text-primary"></i>
+                                            <span class="font-bold">Our Credentials</span>
+                                        </a>
+                                    </li>
+                                    <!-- /ko -->
+
+                                    <!-- ko if: music.playlists[list1.id] -->
+                                    <!-- ko with: music.playlists[list1.id] -->
+                                    <li>
+                                        <a href="#list1" class="close-nav">
+                                            <i class="icon text-success" data-bind="css: $root.list1.icon"></i>
+                                            <span class="font-bold" data-bind="html: title"></span>
+                                        </a>
+                                    </li>
+                                    <!-- /ko -->
+                                    <!-- /ko -->
+
+                                    <!-- ko if: music.playlists[list2.id] -->
+                                    <!-- ko with: music.playlists[list2.id] -->
+                                    <li>
+                                        <a href="#list2" class="close-nav">
+                                            <i class="icon text-info" data-bind="css: $root.list2.icon"></i>
+                                            <span class="font-bold" data-bind="html: title"></span>
+                                        </a>
+                                    </li>
+                                    <!-- /ko -->
+                                    <!-- /ko -->
+
+                                    <!-- ko if: music.playlists[list3.id] -->
+                                    <!-- ko with: music.playlists[list3.id] -->
+                                    <li>
+                                        <a href="#list3" class="close-nav">
+                                            <i class="icon text-danger" data-bind="css: $root.list3.icon"></i>
+                                            <span class="font-bold" data-bind="html: title"></span>
+                                        </a>
+                                    </li>
+                                    <!-- /ko -->
+                                    <!-- /ko -->
+
+                                    <!-- ko if: app.settings.app_type == 'producer' -->
+                                    <li>
+                                        <a href="#special-offers" class="close-nav">
+                                            <i class="icon-tag icon text-warning"></i>
+                                            <span class="font-bold">Special Offers</span>
+                                        </a>
+                                    </li>
+                                    <!-- /ko -->
+
+                                    <!-- ko if: showFeaturedProducers -->
+                                    <li>
+                                        <a href="#featured-producers" class="close-nav">
+                                            <i class="icon-users icon text-info"></i>
+                                            <span class="font-bold">Featured Producers</span>
+                                        </a>
+                                    </li>
+                                    <!-- /ko -->
+
+                                    <li>
+                                        <a href="javascript:;" data-bind="click: cart.show" class="close-nav">
+                                            <i class="icon-basket icon text-primary-lter"></i>
+                                            <b class="badge bg-primary pull-right" data-bind="text: cart().items.length">0</b>
+                                            <span class="font-bold">Shopping Cart</span>
+                                        </a>
+                                    </li>
+                                    <li class="m-b hidden-nav-xs"></li>
+                                </ul>
+                                <ul class="nav" data-ride="collapse">
+                                    <li class="hidden-nav-xs padder m-t m-b-sm text-xs text-muted">
+                                        Browse
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" data-bind="click: music.showPlaylists" class="close-nav">
+                                            <i class="icon-playlist icon text-success-lter"></i>
+                                            <b class="badge bg-success dker pull-right"
+                                               data-bind="text: music.playlistKeys().length"></b>
+                                            <span>All Playlists</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="auto">
+                                    <span class="pull-right text-muted">
+                                      <i class="fa fa-angle-left text"></i>
+                                      <i class="fa fa-angle-down text-active"></i>
+                                    </span>
+                                            <i class="icon-grid icon">
+                                            </i>
+                                            <span>Content</span>
+                                        </a>
+                                        <ul class="nav dk text-sm"
+                                            data-bind="foreach: $.map(content.categories, function(category) { return category; })">
+                                            <li style="clear:both">
+                                                <a href="javascript:;" class="auto">
+                                                    <i class="fa fa-angle-right text-xs" style="margin:-10px 0 0 -10px"></i>
+                                                    <span data-bind="html: title"></span>
+                                                </a>
+                                                <ul class="nav dker" style="display: none;" data-bind="foreach: content">
+                                                    <li style="clear:both">
+                                                        <a href="javascript:;" data-bind="click: $root.content.show"
+                                                           class="close-nav">
+                                                            <i data-bind="attr: { class: icon }" style="margin:-10px 0 0 -10px"></i>
+                                                            <span data-bind="html: title"></span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <!-- ko if: app.settings.bootmode != 'disabled' -->
+                                <ul class="nav text-sm">
+                                    <li class="hidden-nav-xs padder m-t m-b-sm text-xs text-muted">
+                                        Interfaces
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="auto" data-bind="click: app.fullScreen" class="close-nav">
+                                            <i class="icon-screen-smartphone icon">
+                                            </i>
+                                            <span>Launch Mobile App</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- /ko -->
+                            </nav>
+                            <!-- / nav -->
+                        </div>
+                    </section>
+
+                    <footer class="footer hidden-xs no-padder text-center-nav-xs">
+                        <div class="bg hidden-xs ">
+                            <div class="dropdown dropup wrapper-sm clearfix">
+                                <a href="javascript:;" title="Current Beat" class="dropdown-toggle" data-toggle="dropdown">
+                                  <span class="thumb-sm avatar pull-left m-l-xs">
+                                    <img data-bind="attr: { src: nowplaying().thumbnail }" class="dker" alt="...">
+                                    <i class="on b-black"></i>
+                                  </span>
+                                </a>
+                                <ul class="dropdown-menu animated fadeInRight aside text-left" style="width:315px">
+                                    <li>
+                                        <div style="padding:5px 15px"><strong data-bind="html: nowplaying().title"></strong></div>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <!-- ko foreach: nowplaying().licensing.options -->
+                                    <li>
+                                        <a href="javascript:;" data-bind="click: $root.music.showLicense">
+                                            <span class="badge bg-success pull-right" data-bind="text: price"></span>
+                                            <i class="fa fa-tag"></i> <span data-bind="text: name"></span>
+                                        </a>
+                                    </li>
+                                    <!-- /ko -->
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="javascript:;" data-bind="click: music.showLicenseOptions"><i
+                                                class="fa fa-shopping-cart"></i> Show All Purchase Options</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </footer>
+                </section>
+            </aside>
+            <!-- /.aside -->
+            <section id="content">
+                <section class="hbox stretch">
+                    <section>
+                        <section class="vbox">
+                            <section class="scrollable padder-lg w-f-md" id="bjax-target">
+
+                                <h2 id="producer-bio" class="font-thin m-b"><span></span></h2>
+
+                                <!-- ko if: app.settings.app_type == 'producer' -->
+                                <div class="row" data-bind="with: producers.byId()[app.settings.acct_id]">
+                                    <div class="col-lg-4">
+                                        <section class="panel panel-default">
+                                            <div class="panel-body">
+                                                <div class="clearfix text-center m-t">
+                                                    <div class="inline">
+                                                        <div class="img-full">
+                                                            <img data-bind="attr: { src: banner }" alt="...">
+                                                        </div>
+                                                        <div class="h4 m-t m-b-xs" data-bind="html: name"></div>
+                                                        <small class="text-muted m-b" data-bind="html: tagline"></small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <footer class="panel-footer bg-info text-center">
+                                                <div class="row pull-out">
+                                                    <div class="col-xs-4">
+                                                        <div class="padder-v">
+                                                            <span class="m-b-xs h3 block text-white" data-bind="text: total_beats"></span>
+                                                            <small class="text-muted">Beats</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-4 dk">
+                                                        <div class="padder-v">
+                                                            <span class="m-b-xs h3 block text-white" data-bind="text: total_discounts"></span>
+                                                            <small class="text-muted">Discounts</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <div class="padder-v">
+                                                            <span class="m-b-xs h3 block text-white" data-bind="text: total_trackouts"></span>
+                                                            <small class="text-muted">Trackouts</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </footer>
+                                        </section>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <section class="panel panel-default">
+                                                    <div class="caption wrapper-lg">
+                                                        <h2 class="post-title" style="margin-top:0">Wrap Sheet</h2>
+
+                                                        <div class="post-sum" data-bind="html:description"></div>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <section class="panel panel-default">
+                                                    <header class="panel-heading bg-light no-border">
+                                                        <div class="clearfix">
+                                                            <i class="pull-left m-r icon-badge i-3x avatar text-success"
+                                                               style="background-color: #fff; padding: 10px; border: 1px solid; box-shadow: 1px 1px 2px #ccc;"></i>
+
+                                                            <div class="clear">
+                                                                <div class="h3 m-t-xs m-b-xs">
+                                                                    Notable Achievements
+                                                                </div>
+                                                                <small class="text-muted">Beat Brokerz Certifications</small>
+                                                            </div>
+                                                        </div>
+                                                    </header>
+                                                    <div class="list-group no-radius alt" data-bind="foreach: badges">
+                                                              <span class="list-group-item">
+                                                    <!-- ko if: ranknum > 0 -->
+                                                                <span class="badge bg-info" data-bind="text: ranknum"></span>
+                                                    <!-- /ko -->
+                                                                <i class="icon-badge icon-muted"></i>
+                                                                &nbsp;&nbsp;<span data-bind="text: name"></span>
+                                                              </span>
+                                                    </div>
+                                                </section>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /ko -->
+
+                                <!-- ko if: music.playlists[list1.id] -->
+                                <!-- ko with: music.playlists[list1.id] -->
+
+                                <h2 id="list1" class="font-thin m-b">
+                                    <span data-bind="html: title"></span>
+                                            <span data-bind="css: { animate: $root.music.playing() }" class="musicbar inline m-l-sm"
+                                                  style="width:20px;height:20px">
+                                                      <span class="bar1 a1 bg-primary lter"></span>
+                                                      <span class="bar2 a2 bg-info lt"></span>
+                                                      <span class="bar3 a3 bg-success"></span>
+                                                      <span class="bar4 a4 bg-warning dk"></span>
+                                                      <span class="bar5 a5 bg-danger dker"></span>
+                                                    </span>
+                                    <small style="margin-left:10px" data-bind="text: '(' + $root.music.Playlist[id].count() + ' Beats)'"></small>
+                                </h2>
+
+                                <div class="row row-sm">
+                                    <!-- ko foreach: $root.music.Playlist[id] -->
+                                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                        <div class="item">
+                                            <div class="pos-rlt">
+                                                <div class="bottom">
+                                                    <span class="badge bg-info m-l-sm m-b-sm" data-bind="text: genres"></span>
+                                                </div>
+                                                <div class="item-overlay opacity r r-2x bg-black"
+                                                     data-bind="css: { active: nid == $root.music.nowplaying().nid }">
+                                                    <div class="text-info padder m-t-sm text-sm">
+                                                        <i data-bind="css: { 'fa-star' : ratings.total >= 1, 'fa-star-o' : ratings.total < 1 }"
+                                                           class="fa"></i>
+                                                        <i data-bind="css: { 'fa-star' : ratings.average >= 40, 'fa-star-o' : ratings.average < 40 }"
+                                                           class="fa"></i>
+                                                        <i data-bind="css: { 'fa-star' : ratings.average >= 60, 'fa-star-o' : ratings.average < 60 }"
+                                                           class="fa"></i>
+                                                        <i data-bind="css: { 'fa-star' : ratings.average >= 80, 'fa-star-o' : ratings.average < 80 }"
+                                                           class="fa"></i>
+                                                        <i data-bind="css: { 'fa-star' : ratings.average >= 90, 'fa-star-o' : ratings.average < 90 }"
+                                                           class="fa"></i>
+                                                    </div>
+                                                    <div class="center text-center m-t-n">
+                                                        <a href="javascript:;"
+                                                           data-bind="css: { active: nid == $root.music.nowplaying().nid && $root.music.playing() }">
+                                                            <i class="icon-control-play i-2x text" data-bind="click: $root.music.playMedia"></i>
+                                                            <i class="icon-control-pause i-2x text-active" data-bind="click: $root.music.pause"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="bottom padder m-b-sm">
+                                                        <a href="javascript:;" class="pull-right" data-bind="click: $root.music.showLicenseOptions">
+                                                            <i class="fa fa-dollar"></i> &nbsp;Licensing
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <a href="javascript:;"><img data-bind="attr: { src: image }" alt="" class="r r-2x img-full"></a>
+                                            </div>
+                                            <div class="padder-v">
+                                                <a href="javascript:;" data-bind="html: title, click: $root.music.showLicenseOptions"
+                                                   class="text-ellipsis"></a>
+                                                <span class="text-ellipsis text-xs text-muted" data-bind="html: artist"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ko if: $index() % 2 != 0 -->
+                                    <div class="clearfix visible-xs"></div>
+                                    <!-- /ko -->
+
+                                    <!-- /ko -->
+
+                                    <!-- ko if: $root.music.Playlist[id].count() > $root.music.Playlist[id]().length -->
+                                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                        <div class="item">
+                                            <div class="pos-rlt">
+                                                <div class="center text-center">
+                                                    <a href="javascript:;" data-bind="click: $root.music.loadMore">
+                                                        <i data-bind="css: 'load-' + id" class="fa fa-refresh text"></i> Load More...
+                                                    </a>
+                                                </div>
+                                                <img src="images/placeholder.png" class="r r-2x img-full">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /ko -->
+
+                                </div>
+
+                                <!-- /ko -->
+                                <!-- /ko -->
+
+                                <div class="row">
+                                    <div class="col-md-7">
+
+                                        <!-- ko if: music.playlists[list2.id] -->
+                                        <!-- ko with: music.playlists[list2.id] -->
+
+                                        <h3 id="list2" class="font-thin">
+                                            <span data-bind="html: title"></span>
+                                            <small style="margin-left:10px"
+                                                   data-bind="text: '(' + $root.music.Playlist[id].count() + ' Beats)'"></small>
+                                        </h3>
+                                        <div class="row row-sm">
+
+                                            <!-- ko foreach: $root.music.Playlist[id] -->
+                                            <div class="col-xs-6 col-sm-3">
+                                                <div class="item">
+                                                    <div class="pos-rlt">
+                                                        <div class="item-overlay opacity r r-2x bg-black"
+                                                             data-bind="css: { active: nid == $root.music.nowplaying().nid }">
+                                                            <div class="text-info padder m-t-sm text-sm">
+                                                                <i data-bind="css: { 'fa-star' : ratings.total >= 1, 'fa-star-o' : ratings.total < 1 }"
+                                                                   class="fa"></i>
+                                                                <i data-bind="css: { 'fa-star' : ratings.average >= 40, 'fa-star-o' : ratings.average < 40 }"
+                                                                   class="fa"></i>
+                                                                <i data-bind="css: { 'fa-star' : ratings.average >= 60, 'fa-star-o' : ratings.average < 60 }"
+                                                                   class="fa"></i>
+                                                                <i data-bind="css: { 'fa-star' : ratings.average >= 80, 'fa-star-o' : ratings.average < 80 }"
+                                                                   class="fa"></i>
+                                                                <i data-bind="css: { 'fa-star' : ratings.average >= 90, 'fa-star-o' : ratings.average < 90 }"
+                                                                   class="fa"></i>
+                                                            </div>
+                                                            <div class="center text-center m-t-n">
+                                                                <a href="javascript:;"
+                                                                   data-bind="css: { active: nid == $root.music.nowplaying().nid && $root.music.playing() }">
+                                                                    <i class="icon-control-play i-2x text" data-bind="click: $root.music.playMedia"></i>
+                                                                    <i class="icon-control-pause i-2x text-active"
+                                                                       data-bind="click: $root.music.pause"></i>
+                                                                </a>
+                                                            </div>
+                                                            <div class="bottom padder m-b-sm">
+                                                                <a href="javascript:;" class="pull-right"
+                                                                   data-bind="click: $root.music.showLicenseOptions">
+                                                                    <i class="fa fa-dollar"></i> &nbsp;Licensing
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <a href="javascript:;"><img data-bind="attr: { src: image }" alt="" class="r r-2x img-full"></a>
+                                                    </div>
+                                                    <div class="padder-v">
+                                                        <a href="javascript:;" data-bind="html: title, click: $root.music.showLicenseOptions"
+                                                           class="text-ellipsis"></a>
+                                                        <span class="text-ellipsis text-xs text-muted" data-bind="html: genres"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /ko -->
+
+                                            <!-- ko if: $root.music.Playlist[id].count() > $root.music.Playlist[id]().length -->
+                                            <div class="col-xs-6 col-sm-3">
+                                                <div class="item">
+                                                    <div class="pos-rlt">
+                                                        <div class="center text-center">
+                                                            <a href="javascript:;" data-bind="click: $root.music.loadMore">
+                                                                <i data-bind="css: 'load-' + id" class="fa fa-refresh text"></i> Load More...
+                                                            </a>
+                                                        </div>
+                                                        <img src="images/placeholder.png" class="r r-2x img-full">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /ko -->
+
+                                        </div>
+                                        <!-- /ko -->
+                                        <!-- /ko -->
+                                    </div>
+
+                                    <div class="col-md-5">
+                                        <!-- ko if: music.playlists[list3.id] -->
+                                        <!-- ko with: music.playlists[list3.id] -->
+                                        <h3 id="list3" class="font-thin">
+                                            <span data-bind="html: title"></span>
+                                            <small style="margin-left:10px"
+                                                   data-bind="text: '(' + $root.music.Playlist[id].count() + ' Beats)'"></small>
+                                        </h3>
+                                        <div class="list-group bg-white list-group-lg no-bg auto" data-bind="foreach: $root.music.Playlist[id]">
+                                            <a href="javascript:;" data-bind="click: $root.music.playMedia" class="list-group-item clearfix">
+                                                <span class="pull-right h2 text-muted m-l" data-bind="text: $index()+1"></span>
+                                                          <span class="pull-left thumb-sm avatar m-r">
+                                                            <img data-bind="attr: { src: thumbnail }">
+                                                          </span>
+                                                          <span class="clear">
+                                                            <span data-bind="html: title"></span>
+                                                            <small class="text-muted clear text-ellipsis" data-bind="text: genres"></small>
+                                                          </span>
+                                            </a>
+                                        </div>
+                                        <!-- ko if: $root.music.Playlist[id].count() > $root.music.Playlist[id]().length -->
+                                        <a href="javascript:;" class="pull-right" data-bind="click: $root.music.loadMore"><i
+                                                data-bind="css: 'load-' + id" class="fa fa-refresh"></i> &nbsp;Load more...</a>
+                                        <!-- /ko -->
+
+                                        <!-- /ko -->
+                                        <!-- /ko -->
+                                    </div>
+                                </div>
+
+                                <!-- ko if: showFeaturedProducers -->
+                                <h3 id="featured-producers" class="font-thin">Featured Producers</h3>
+
+                                <div class="row">
+                                    <!-- ko foreach: producers.list -->
+                                    <div class="col-sm-6 col-lg-3">
+                                        <section class="panel panel-default">
+                                            <header class="panel-heading bg-light no-border">
+                                                <div class="clearfix">
+                                                    <div class="img-full">
+                                                        <img data-bind="attr: { src: banner }" alt="...">
+                                                    </div>
+                                                    <div class="clear">
+                                                        <div class="h3 m-t-xs m-b-xs">
+                                                            <span data-bind="html: name"></span>
+                                                            <i class="fa fa-circle text-success pull-right text-xs m-t-sm"></i>
+                                                        </div>
+                                                        <small class="text-muted" data-bind="html: tagline + '&nbsp;'"></small>
+                                                    </div>
+                                                </div>
+                                            </header>
+                                            <div class="list-group no-radius alt">
+                                                <div class="list-group-item">
+                                                    <span class="badge bg-success" data-bind="text: total_beats"></span>
+                                                    <i class="fa fa-music icon-muted"></i>
+                                                    &nbsp;&nbsp;Beats
+                                                </div>
+                                                <div class="list-group-item">
+                                                    <span class="badge bg-info" data-bind="text: total_discounts"></span>
+                                                    <i class="fa fa-tags icon-muted"></i>
+                                                    &nbsp;&nbsp;Discounts
+                                                </div>
+                                                <a class="list-group-item" href="javascript:;"
+                                                   data-bind="click: function(producer) { $root.app.fullScreen('catalog/' + producer.uid); }">
+                                                    <i class="fa fa-eye"></i>
+                                                    &nbsp;&nbsp;Browse Fullscreen
+                                                </a>
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <!-- /ko -->
+                                </div>
+                                <!-- /ko -->
+
+                                <!-- ko if: app.settings.app_type == 'producer' -->
+                                <!-- ko with: producers.byId()[app.settings.acct_id] -->
+                                <h3 id="special-offers" class="font-thin">Special Offers!</h3>
+
+                                <div class="row row-sm" data-bind="foreach: discounts">
+                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                                        <section class="panel panel-info">
+                                            <div class="panel-body">
+                                                <h4 style="margin-top:0"><i class="fa fa-tag"></i> &nbsp;<span data-bind="html: name"></span></h4>
+
+                                                <p data-bind="html: description"></p>
+                                                <h5 class="text-success">How to qualify:</h5>
+
+                                                <p data-bind="html: sys_description"></p>
+                                                <!-- ko if: limitations -->
+                                                <h5 class="text-danger">Discount limited to:</h5>
+
+                                                <p data-bind="html: limitations"></p>
+                                                <!-- /ko -->
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                                <!-- /ko -->
+                                <!-- /ko -->
+
+                                <div class="row m-t-lg m-b-lg">
+                                    <div class="col-sm-6">
+                                        <div class="bg-primary wrapper-md r">
+                                            <a href="javascript:alert('Press Ctrl + D on your keyboard to create a bookmark');">
+                                                <span class="h4 m-b-xs block"><i class="fa fa-bookmark i-lg"></i> &nbsp;&nbsp;Bookmark this page!</span>
+                                                <span class="text-muted">Add our music application to your browser so new beats are always just a click away!</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- ko if: app.settings.bootmode != 'disabled' -->
+                                    <div class="col-sm-6">
+                                        <div class="bg-black wrapper-md r">
+                                            <a href="javascript:;" data-bind="click: app.fullScreen">
+                                                <span class="h4 m-b-xs block"><i class="icon-rocket i-lg"></i> &nbsp;&nbsp;Launch our mobile app</span>
+                                                <span class="text-muted">Access this music and content on your phone or tablet in a native mobile interface!</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- /ko -->
+                                </div>
+
+                            </section>
+
+                            <footer class="footer bg-dark jplayer-footer">
+                                <div id="jp_container_footer">
+                                    <div class="jp-type-playlist">
+                                        <div id="jplayer_N" class="jp-jplayer hide"></div>
+                                        <div class="jp-gui">
+                                            <div class="jp-video-play hide">
+                                                <a class="jp-video-play-icon">play</a>
+                                            </div>
+                                            <div class="jp-interface">
+                                                <div class="jp-controls">
+                                                    <div><a class="jp-previous"><i class="icon-control-rewind i-lg"></i></a></div>
+                                                    <div>
+                                                        <a class="jp-play"><i class="icon-control-play i-2x"></i></a>
+                                                        <a class="jp-pause hid"><i class="icon-control-pause i-2x"></i></a>
+                                                    </div>
+                                                    <div><a class="jp-next"><i class="icon-control-forward i-lg"></i></a></div>
+                                                    <div class="hide"><a class="jp-stop"><i class="fa fa-stop"></i></a></div>
+                                                    <div>
+                                                        <a class="" data-toggle="dropdown" data-target="#playlist" title="Current Playlist">
+                                                            <i class="icon-list"></i>
+                                                            <b data-bind="text: music.activePlaylistItems().length"
+                                                               class="badge badge-sm up bg-info dker pull-right"></b>
+                                                        </a>
+                                                    </div>
+                                                    <div class="jp-progress hidden-xs">
+                                                        <div class="jp-seek-bar dk">
+                                                            <div class="jp-play-bar bg-info">
+                                                            </div>
+                                                            <div class="jp-title text-lt">
+                                                                <ul>
+                                                                    <li data-bind="html: nowplaying().title"></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="hidden-xs hidden-sm jp-current-time text-xs text-muted"></div>
+                                                    <div class="hidden-xs hidden-sm jp-duration text-xs text-muted"></div>
+                                                    <div class="hidden-xs hidden-sm">
+                                                        <a class="jp-mute" title="mute"><i class="icon-volume-2"></i></a>
+                                                        <a class="jp-unmute" title="unmute" style="display:none"><i class="icon-volume-off"></i></a>
+                                                    </div>
+                                                    <div class="hidden-xs hidden-sm jp-volume">
+                                                        <div class="jp-volume-bar dk">
+                                                            <div class="jp-volume-bar-value lter"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <a class="jp-repeat" title="Repeat Off"><i class="icon-loop text-muted"></i></a>
+                                                        <a class="jp-repeat-off" style="display:none" title="Repeat On"><i
+                                                                class="icon-loop text-lt"></i></a>
+                                                    </div>
+                                                    <div style="width:100px">
+                                                        <a title="Purchase Options" data-bind="click: music.showLicenseOptions"><i
+                                                                class="fa fa-dollar text-muted"></i> &nbsp;Licensing</a>
+                                                    </div>
+                                                    <div data-bind="css: { hide: app.settings.bootmode == 'disabled' }" class="hide">
+                                                        <a class="jp-full-screen" title="Full Screen"><i class="icon-size-fullscreen text-muted"
+                                                                                                         data-bind="click: app.fullScreen"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="jp-playlist dropup" id="playlist">
+                                            <ul class="dropdown-menu aside-xl dker" style="display:block;">
+                                                <!-- ko foreach: music.activePlaylistItems() -->
+                                                <li>
+                                                    <div>
+                                                        <a class="jp-playlist-item-remove" data-bind="click: $root.music.showLicenseOptions"
+                                                           href="javascript:;"><i class="fa fa-shopping-cart"></i></a>
+                                                        <a class="jp-playlist-item"
+                                                           data-bind="click: $root.music.playMedia, html: title, css: { 'jp-playlist-current' : nid == $root.nowplaying().nid }"
+                                                           href="javascript:;"></a>
+                                                    </div>
+                                                </li>
+                                                <!-- /ko -->
+                                            </ul>
+                                        </div>
+                                        <div class="jp-no-solution hide">
+                                            <span>Update Required</span>
+                                            To play the media you will need to either update your browser to a recent version or update your <a
+                                                href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                                        </div>
+                                    </div>
+                                </div>
+                            </footer>
+
+                        </section>
+                    </section>
+
+                    <!-- SIDE CONTENT -->
+                    <aside class="aside-md bg-light dk" id="sidebar">
+                        <section class="vbox animated fadeInRight">
+                            <section class="w-f-md scrollable hover">
+                                <h4 class="font-thin m-l-md m-t">Social Feeds</h4>
+                                <!-- Social feeds (or other content) for side column goes here... -->
+
+
+                            </section>
+                            <footer class="footer footer-md bg-black">
+                                <form class="" role="search">
+                                    <div class="form-group clearfix m-b-none">
+                                        <div class="text-center" style="padding:15px 0">
+                                            <!-- ko with: producers.byId()[app.settings.acct_id] -->
+                                            <!-- ko foreach: sociallinks -->
+                                            <a class="btn btn-sm btn-icon btn-dark btn-rounded"
+                                               data-bind="attr: { href: url, title: title }" style="margin:0 2px"><i
+                                                    data-bind="attr: { class: 'fw' + icon }"></i></a>
+                                            <!-- /ko -->
+                                            <!-- /ko -->
+                                        </div>
+                                    </div>
+                                </form>
+                            </footer>
+                        </section>
+                    </aside>
+                    <!-- / SIDE CONTENT -->
+
+                </section>
+            <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+            </section>
+        </section>
+    </section>
+</section>
+
+<div class="modal fade" id="modal-form">
+    <div class="modal-dialog">
+        <div class="modal-content modal-email-dialog">
+            <div class="modal-body wrapper-lg">
+                <div class="row">
+                    <div class="">
+                        <h3 class="m-t-none m-b"><i class="icon-envelope"></i> &nbsp;Send Email</h3>
+
+                        <p>Contact us by email using this contact form.</p>
+
+                        <form role="form" method="post"
+                              data-bind="attr: { action: 'https://www.beatbrokerz.com/contact_form/' + app.settings.acct_id }"
+                              id="modal-contact-form">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input name="name" id="name" class="form-control" placeholder="Enter Your Name">
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" name="from" id="email" class="form-control"
+                                       placeholder="Enter Your Email Address">
+                            </div>
+                            <div class="form-group">
+                                <label>Subject</label>
+                                <input name="subject" id="subject" class="form-control"
+                                       placeholder="Type Your Email Subject">
+                            </div>
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea name="message" id="message" class="form-control"></textarea>
+                            </div>
+                            <div class="row reCaptcha"></div>
+                            <div class="checkbox m-t-lg">
+                                <input name="ajax" type="hidden" value="true">
+                                <input name="form_build_id" type="hidden">
+                                <input name="form_token" id="edit-anonymous-contact-form-form-token" type="hidden">
+                                <input name="form_id" id="edit-anonymous-contact-form" value="anonymous_contact_form"
+                                       type="hidden">
+                                <button type="submit" class="btn btn-sm btn-success pull-right text-uc m-t-n-xs">
+                                    <strong>Send Email</strong></button>
+                                <label>
+                                    <input type="checkbox" name="copy"> Send a copy to yourself
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap -->
+<script src="js/bootstrap.js"></script>
+
+<!-- App -->
+<script src="js/app.js"></script>
+<script src="js/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="js/app.plugin.js"></script>
+
+<!-- Ajax Form -->
+<script src="js/jquery.form.min.js"></script>
+<script src="https://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
+
+<!--  Launch Flex Framework:
+  --  Replace the number in the script below with your own App ID from Beat Brokerz!
+  --  see: http://www.beatbrokerz.com/flex/start
+  -->
+<script type="text/javascript" src="http://www.beatbrokerz.com/flexstore/apps/41345"></script>
+
+<!-- Page specific custom flex programming (http://www.beatbrokerz.com/flex/dev) -->
+<script type="text/javascript">
+    flexloader.execute(function ($, App) {
+
+        /* Wire the jplayer interface on the page to our flex app */
+        App.Music.addInterface($("#jp_container_footer"));
+
+        /* Define which playlists should be primary on the page, and reference them in our baseVars  */
+        switch (App.appSettings.app_type) {
+            case 'producer':
+                App.baseVars.list1 = { id: 'store', icon: 'icon-disc' };
+                App.baseVars.list2 = { id: 'top', icon: 'icon-bar-chart' };
+                App.baseVars.list3 = { id: 'bestsellers', icon: 'icon-badge' };
+                break;
+            default:
+                App.baseVars.list1 = { id: 'custom_0', icon: 'icon-disc' };
+                App.baseVars.list2 = { id: 'custom_1', icon: 'icon-music-tone-alt' };
+                App.baseVars.list3 = { id: 'custom_2', icon: 'icon-music-tone' };
+        }
+
+        /* Update spin indicators on 'load more...' buttons when we refresh playlists */
+        App.on('bbflex-ajax-working', function (params) {
+            if (params && params.data && params.data.music) {
+                $('i.fa-refresh.load-' + params.data.music).addClass('fa-spin');
+            }
+        });
+        App.on('bbflex-ajax-complete', function (params) {
+            if (params && params.data && params.data.music) {
+                $('i.fa-refresh.load-' + params.data.music).removeClass('fa-spin');
+            }
+        });
+
+        /* UI Notify of playlist changes */
+        App.on('bbflex-playlist-changed', function (playlist) {
+            if (App.Music.currentPlaylist && playlist != App.Music.currentPlaylist) {
+                alertify.log('Now listening to playlist:<br><h4>' + App.Music.playlists[playlist].title + '</h4>');
+            }
+        });
+
+        /* Contact Form Wiring */
+        var updateContactForm = function () {
+            $.get('//www.beatbrokerz.com/contact_form/' + App.appSettings.acct_id, { ajax: true }, function (data) {
+                var content = $('<div>').html(data);
+                var form_build_id = content.find('input[name="form_build_id"]').val();
+                var form_token = content.find('input[name="form_token"]').val();
+                $('.modal-email-dialog input[name="form_build_id"]').attr({ id: form_build_id, value: form_build_id });
+                $('.modal-email-dialog input[name="form_token"]').val(form_token);
+                if (content.find('.captcha').length) {
+                    $('.modal-email-dialog div.reCaptcha').html(content.find('.captcha').html());
+                    Recaptcha.create('6LdQ3cESAAAAANkmtIRMUduWPL06DtEWI4XmU_v2', 'recaptcha_ajax_api_container', {theme: 'clean'});
+                }
+            }, 'jsonp');
+        }
+        $(document).on('click', '#email-modal', updateContactForm);
+        $('#modal-contact-form').ajaxForm({
+            clearForm: false,
+            beforeSubmit: function () {
+                $("#modal-contact-form").activity();
+            },
+            success: function (response, status) {
+                $("#modal-contact-form").activity(false);
+                var content = $('<div>').html(response.replace(/src=/gi, 'nosrc='));
+                var message = content.find('#system-messages .messages');
+                if (message.hasClass('error')) {
+                    alertify.error(message.text());
+                }
+                else {
+                    alertify.success(message.text());
+                    $('#modal-contact-form')[0].reset();
+                }
+                updateContactForm();
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                $("#modal-contact-form").activity(false);
+                alertify.error('There was an error sending your message.');
+            }
+        });
+
+        /**
+         *  Some of our interface items depend on app data to be ready to display correctly,
+         *  so we wrap that code with App.ready()
+         *  see: http://www.beatbrokerz.com/flex/dev/utilities#app-ready
+         */
+        App.ready(function () {
+
+            App.baseVars.showFeaturedProducers =
+                    App.appSettings.bootmode != 'disabled' && (
+                            (App.appSettings.app_type == 'producer' && App.Producers.list().length > 1) ||
+                                    (App.appSettings.app_type != 'producer' && App.Producers.list().length)
+                            );
+
+            // apply our bindings (see: http://www.beatbrokerz.com/flex/theme#security-implications)
+            $('html').bbflex('applyBindings');
+
+        });
+
+    });
+</script>
+
+</body>
+</html>
