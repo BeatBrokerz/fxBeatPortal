@@ -28,7 +28,7 @@
 <!-- BEGIN LOADING SCREEN -->
 <div id="pageloader">
 
-    <div class="pageloader-icon" style="width:200px; color:#fff;">
+    <div class="pageloader-icon" style="width:200px; text-align:center; color:#fff;">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 		 width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
 	    <path id="loading-12-icon" d="M291,82.219c0,16.568-13.432,30-30,30s-30-13.432-30-30s13.432-30,30-30S291,65.65,291,82.219z
@@ -51,7 +51,7 @@
 		 M188.482,131.649c14.352-8.286,19.266-26.633,10.982-40.982c-8.285-14.348-26.631-19.264-40.982-10.98
 		c-14.346,8.285-19.264,26.633-10.98,40.982C155.787,135.017,174.137,139.932,188.482,131.649z"/>
 	    </svg>
-        <br>Loading Interface
+        <br><span id="loading-message">Loading Interface</span>
     </div>
 
     <script>
@@ -62,9 +62,11 @@
                 var icon = $(".pageloader-icon");
                 icon.css('right', ((browserwidth - icon.width()) / 2)).css('top', ((browserheight - icon.height()) / 2));
             }
-            $(window).resize(resizenow);
-            resizenow();
+            var message = $('#loading-message');
+            $(window).resize(resizenow).resize();
+            $(document).ready(function() { message.html('Loading Application'); });
             flexloader.execute(function($, App) {
+                App.ready(function(){ message.html('Loading Playlists'); });
                 App.final(window.pageloaderComplete);
             });
         })(jQuery);
@@ -149,6 +151,7 @@
                         <li>
                             <span class="arrow top"></span>
                         </li>
+                        <!-- ko if: app.settings.app_type == 'producer' -->
                         <!-- ko with: producers.byId()[app.settings.acct_id] -->
                         <!-- ko foreach: sociallinks -->
                         <li>
@@ -159,6 +162,7 @@
                         <!-- /ko -->
                         <!-- /ko -->
                         <li class="divider"></li>
+                        <!-- /ko -->
                         <li>
                             <a id="email-modal" href="#modal-form" data-toggle="modal"><i class="fa fa-envelope-o"></i>
                                 &nbsp;Send Email</a>
