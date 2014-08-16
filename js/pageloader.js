@@ -1,14 +1,8 @@
-<!-- BEGIN POSITIONING HTML BEFORE FADE -->
-jQuery("html").addClass('bonfire-html-onload');
-<!-- END POSITIONING HTML BEFORE FADE -->
-
-<!-- BEGIN DISABLE BROWSER SCROLL -->
-/* disable browser scroll on touch devices */
+jQuery("html").addClass('html-onload');
 jQuery(document.body).on("touchmove", function(e) {
     e.preventDefault();
 });
 
-/* disable browser scroll on desktop */
 var scrollPosition = [
 self.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft,
 self.pageYOffset || document.documentElement.scrollTop  || document.body.scrollTop
@@ -18,13 +12,11 @@ html.data('scroll-position', scrollPosition);
 html.data('previous-overflow', html.css('overflow'));
 html.css('overflow', 'hidden');
 window.scrollTo(scrollPosition[0], scrollPosition[1]);
-<!-- END DISABLE BROWSER SCROLL -->
 
-<!-- BEGIN LOADER FADE-OUT AND HTML SLIDE-DOWN -->
-jQuery(window).load(function() {	
+window.pageloaderComplete = function() {
 
 	/* fade out the loading icon */
-	jQuery(".bonfire-pageloader-icon").addClass('bonfire-pageloader-icon-hide');
+	jQuery(".pageloader-icon").addClass('pageloader-icon-hide');
 
 	/* after 250ms delay, restore browser scroll + fade out loader background + slide down page */
 	setTimeout(function(){
@@ -39,10 +31,10 @@ jQuery(window).load(function() {
 		window.scrollTo(scrollPosition[0], scrollPosition[1]);
 
 		/* fade out loader */
-		jQuery("#bonfire-pageloader").addClass('bonfire-pageloader-fade');
+		jQuery("#pageloader").addClass('pageloader-fade');
 
 		/* slide down html */
-		jQuery("html").removeClass('bonfire-html-onload');
+		jQuery("html").removeClass('html-onload');
 
 	},250);	
 	
@@ -50,9 +42,10 @@ jQuery(window).load(function() {
 	setTimeout(function(){
 
 	/* hide loader after fading out*/
-		jQuery("#bonfire-pageloader").addClass('bonfire-pageloader-hide');
+		jQuery("#pageloader").addClass('pageloader-hide');
 
 	},1000);
 	
-});
-<!-- END LOADER FADE-OUT AND HTML SLIDE-DOWN -->
+}
+
+

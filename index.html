@@ -26,12 +26,12 @@
 <script type="text/javascript" src="js/pageloader.js"></script>
 
 <!-- BEGIN LOADING SCREEN -->
-<div id="bonfire-pageloader">
+<div id="pageloader">
 
-    <div class="bonfire-pageloader-icon" style="width:200px; color:#fff;">
+    <div class="pageloader-icon" style="width:200px; color:#fff;">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 		 width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
-	<path id="loading-12-icon" d="M291,82.219c0,16.568-13.432,30-30,30s-30-13.432-30-30s13.432-30,30-30S291,65.65,291,82.219z
+	    <path id="loading-12-icon" d="M291,82.219c0,16.568-13.432,30-30,30s-30-13.432-30-30s13.432-30,30-30S291,65.65,291,82.219z
 		 M261,404.781c-15.188,0-27.5,12.312-27.5,27.5s12.312,27.5,27.5,27.5s27.5-12.312,27.5-27.5S276.188,404.781,261,404.781z
 		 M361.504,113.167c-4.142,7.173-13.314,9.631-20.487,5.489c-7.173-4.141-9.631-13.313-5.49-20.487
 		c4.142-7.173,13.314-9.631,20.488-5.489C363.188,96.821,365.645,105.994,361.504,113.167z M188.484,382.851
@@ -50,21 +50,24 @@
 		s27.243-2.806,34.146,9.149c6.902,11.954,2.806,27.243-9.15,34.145C349.059,437.381,333.771,433.284,326.869,421.328z
 		 M188.482,131.649c14.352-8.286,19.266-26.633,10.982-40.982c-8.285-14.348-26.631-19.264-40.982-10.98
 		c-14.346,8.285-19.264,26.633-10.98,40.982C155.787,135.017,174.137,139.932,188.482,131.649z"/>
-	</svg>
+	    </svg>
         <br>Loading Interface
     </div>
 
     <script>
-        jQuery(window).resize(function () {
+        (function($){
+            var resizenow = function() {
+                var browserwidth = $(window).width();
+                var browserheight = $(window).height();
+                var icon = $(".pageloader-icon");
+                icon.css('right', ((browserwidth - icon.width()) / 2)).css('top', ((browserheight - icon.height()) / 2));
+            }
+            $(window).resize(resizenow);
             resizenow();
-        });
-        function resizenow() {
-            var browserwidth = jQuery(window).width();
-            var browserheight = jQuery(window).height();
-            jQuery('.bonfire-pageloader-icon').css('right', ((browserwidth - jQuery(".bonfire-pageloader-icon").width()) / 2)).css('top', ((browserheight - jQuery(".bonfire-pageloader-icon").height()) / 2));
-        }
-        ;
-        resizenow();
+            flexloader.execute(function($, App) {
+                App.final(window.pageloaderComplete);
+            });
+        })(jQuery);
     </script>
 
 </div>
