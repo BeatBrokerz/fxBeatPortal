@@ -28,7 +28,6 @@
   $(document).on('click', '.close-nav', function() {
 	$('#nav').removeClass('nav-off-screen');
 	$('html').removeClass('open');
-	console.log($(this).closest('li').attr('class'));
   });
   
 }(window.jQuery);
