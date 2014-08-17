@@ -19,7 +19,7 @@ Setup Instructions
 
 1. Download the [zip archive](https://github.com/BeatBrokerz/fxBeatPortal/archive/master.zip) and unzip the contents into a
    folder on your desktop.
-2. Open the 'index.html' file and edit the script tag on line 922 with your own App ID:
+2. Open the 'index.html' file and edit the script tag ~ line 922 with your own App ID:
    `<script type="text/javascript" src="https://www.beatbrokerz.com/flexstore/apps/{your app id}"></script>`
 3. [Optional] Customize the template in any way you want on your local machine. For example, you can add your own social
    widgets html into the 'Social Feeds' section of the 'index.html' file. (Line 824)
