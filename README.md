@@ -1,11 +1,11 @@
-Beat Portal: Single Page App Interface
+Beat Portal: Flex App Interface
 ============
 ![Beat Portal Preview](http://www.beatbrokerz.com/flex/interface/beatportal/preview.png)
 
 This is a full page HTML5 responsive music interface which can be used on your own website as a complete standalone
-interface for your Beat Brokerz flex apps!
+interface to your Beat Brokerz Flex Apps!
 
-Beat Brokerz flex apps allow you to create your own beat websites and music licensing storefronts using any music
+Beat Brokerz Flex Apps allow you to create your own beat websites and music licensing storefronts using any music
 available on the the Beat Brokerz platform. For more information, visit:
 [Beat Brokerz Flex](http://www.beatbrokerz.com/flex)
 
