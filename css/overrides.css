@@ -1,0 +1,6 @@
+
+/* Prevent these flex features from clashing with the design */
+#fwdock-auto,
+#fwscreenplay-auto {
+    display:none;
+}
