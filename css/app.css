@@ -908,7 +908,7 @@ body.container {
     font-size: 11px;
     text-align: center;
     height: 50px;
-    overflow-y: hidden;
+    overflow: hidden;
     border: none;
   }
   .nav-xs .nav-primary > ul > li > a span {
